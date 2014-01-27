@@ -222,9 +222,9 @@ make changes in Rmarkdown and report will update automatically
 
 <br>
 
-![](assets/img/git.JPG)
+![](assets/img/git.jpg)
 
-![](assets/img/github.JPG)
+![](assets/img/github.jpg)
 
 
 
@@ -279,11 +279,11 @@ make changes in Rmarkdown and report will update automatically
 
 ## Find these slides at
 
-- [GitHub](https://github.com/Pakillo)
+- [GitHub](http://pakillo.github.io/Rmarkdown_tutorial)
 
-- [Figshare]()
+- [Figshare](http://figshare.com/authors/Francisco_Rodriguez_Sanchez/454299)
 
-- [Code](https://github.com/Pakillo)
+- [Code](https://github.com/Pakillo/Rmarkdown_tutorial)
 
 
 ---
