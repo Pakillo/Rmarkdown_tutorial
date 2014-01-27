@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Does sunshine make people happy?</title>
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Does sunshine make people happy?</h1>
+
+<h2>Introduction</h2>
+
+<p>It is well known that&hellip;</p>
+
+<h2>Methods</h2>
+
+<p>We collected data on 100 individuals and fitted a linear model.</p>
+
+<h2>Results</h2>
+
+<p>We found that&hellip;</p>
+
+<p>id               Estimate    Std. Error    t value    Pr(&gt;|t|)</p>
+
+<hr/>
+
+<p>(Intercept)       -0.0652        0.4265    -0.1528      0.8789
+sunshine           0.0100        0.0004    23.6833      0.0000</p>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAclBMVEX9/v0AAAAAADkAAGUAOY8AZrUAjf85AAA5ADk5AGU5OY85j485j7U5j9plAABlADllAGVlOY9lZgBltf1/f3+POQCPOTmPZgCPtY+P2/21ZgC1/rW1/v3Z2dnajzna/rXa/v39tWX924/9/rX9/tr9/v0AQIqhAAAAJnRSTlP/////////////////////////////////////////////////AKd6gbwAAAAJcEhZcwAACxIAAAsSAdLdfvwAAA/gSURBVHic7d0Le9M4FoDhCVAKs9sOu03ZKVt3Sdv8/7+4sXOpL3IsWbcjne97eKZQQGT6VrKd2PEfe1LZH7kfAOUJeKUBrzTglQa80oBXGvBKA15pwCsNeKUBrzTglQa80oBXGvBKA15pwCsNeKUBrzTglQa80oBXGvBKA15pwCsNeKUBrzTglQa80oBXGvBKA15pwCsNeKUBrzTglQa80oBXGvBKA15pwCsNeKUBrzTglQa80oBXGvBKA15pwCsNeKUBrzTglQa80oBXGvBKA15pwCsNeKX5wG9IchHhPf4uxQ54pQGvNOCVBrzSgFca8EoDXmnAKw14pQGvNOCVtN0Ofw28koCnLuCVBnydjVf2ScDXGfBkDnilAa804JUGfO3N7OYBX3vAUz/glQa80oBXGvBKA15pwCsNeKUBrzTgldSMfg28jprg8K/fnw//ud1sHsa/A7yYmiY4/G7z+Xn/9tfT/vXbk9vQlKwmPPyvT38fZvzupv3peMoDL6QmAvxpqT/UzvrTkHbvq0Rpapqo8O+Pd+PfAV5CTVz4t/uJO/ASauLCv95O9umBl9B2e3b/+nX4O0Hgje7A56+5wH/9OpIPAv/S7cuxVy+tj3V+4s4zd9X2scp37CN34Kutv3k/xHP1WhrO9/B79fMBn7MRO/A6Gk934HVkcAdeQQZ24Etp8S0tZjNNd+CLaTX8jDvwlTdwbxrgddTMuU/+JPA1Nedu+KPAV5Tl5r0L+HpycQe+nuwO484BX0su030PfDU5ugNfR27LfBvwNeQ63ffAV9EKd+DLz+ko7hLwpbeKHfhSu7x457xXdwr4MjvDr3UHvuzWLfNtwJfc2um+B77kVi/zbcBLzOq8q/XLfBvwErOBd5zu3GK0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" alt="plot of chunk unnamed-chunk-3"/> </p>
+
+<h2>Discussion</h2>
+
+<p>So these results confirm that sunshine is good for happiness (slope = 0.01).</p>
+
+</body>
+
+</html>

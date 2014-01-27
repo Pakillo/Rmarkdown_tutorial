@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reproducible Research with Rmarkdown</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Reproducible Research with Rmarkdown">
+  <meta name="author" content="Francisco Rodriguez-Sanchez [tinyurl.com/frod-san]">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Reproducible Research with Rmarkdown</h1>
+    <h2>Data management, analysis, and paper writing all-in-one</h2>
+    <p>Francisco Rodriguez-Sanchez [tinyurl.com/frod-san]<br/>24/01/2014</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <style>
+strong {
+  font-weight: bold;
+}
+</style>
+
+<h2>Typical workflow of many research projects</h2>
+
+<p><br>
+<br>
+First have an idea</p>
+
+<p>e.g. Does sunshine influence happiness?</p>
+
+<p><br>
+<br></p>
+
+<p><img src="assets/img/idea.PNG" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>1. Prepare data (Excel)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><center><img src="assets/img/excel.PNG" alt=""></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>2. Do some analysis (R)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/rstudio.PNG" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>3. Write a report/paper (Word)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/word.PNG" alt=""></p>
+
+<p>All results (figures, tables) <strong>manually</strong> imported to Word</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>This workflow is broken</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ol>
+<li><p>Collect and manage data (<strong>EXCEL</strong>)</p></li>
+<li><p>Analysis (<strong>R</strong>)</p></li>
+<li><p>Write up (<strong>WORD</strong>)</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Problems brought by the broken workflow</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/img/fig.PNG" alt=""></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul class = "build incremental">
+<li><p>What analysis is behind this figure? Did you account for [...] in the analysis?</p></li>
+<li><p>What dataset was used (e.g. final vs preliminary dataset)?</p></li>
+<li><p>Oops, there is an error in the data. Can you repeat the analysis? And update figures/tables in Word!</p></li>
+<li><p>As a coauthor/reader, I&#39;d like to see the whole research process (how you arrived to that conclusion), rather than cooked manuscript with inserted tables/figures.</p></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Rmarkdown allows us to fix the disconnect</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Integrating </p>
+
+<ol>
+<li><p>Data management</p></li>
+<li><p>Data analysis</p></li>
+<li><p>Writing up results</p></li>
+</ol>
+
+<p>in a single dynamic document</p>
+
+<p><br>
+<br></p>
+
+<blockquote>
+<p><strong>REPRODUCIBLE RESEARCH!</strong></p>
+</blockquote>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Let&#39;s make our sunshine-happiness research reproducible</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li>Before starting any project read this: 
+<a href="http://nicercode.github.io/blog/2013-04-05-projects/">Designing projects at Nice R Code</a></li>
+</ul>
+
+<p><img src="assets/img/projects.PNG" alt=""></p>
+
+<p><br></p>
+
+<ul>
+<li>Now see myproject.Rmd</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>With PANDOC, conversion to PDF or Word is straightforward</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/img/word2.PNG" alt=""></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/img/pdf.PNG" alt=""></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h3>If spotting error in the data, or using different dataset...</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>make changes in Rmarkdown and report will update automatically</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>So... main advantages</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/img/report.PNG" alt=""></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li><p>Data management fully documented (no more manual changes in Excel!)</p></li>
+<li><p>Analysis fully documented</p></li>
+<li><p>Automated reports</p></li>
+<li><p>Lots of customisation options!</p></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Convert your R scripts to Rmd, html, word, pdf...</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>with <a href="http://www.rstudio.com/ide/docs/authoring/markdown_notebooks">one click in RStudio</a></li>
+</ul>
+
+<p><img src="assets/img/notebook.PNG" alt=""></p>
+
+<ul>
+<li>using knitr::spin or knitr::stitch [e.g. stitch(&quot;Rscript2convert.R&quot;)]</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Some useful links:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p><a href="http://www.rstudio.com/ide/docs/authoring/using_markdown">Rstudio docs</a></p></li>
+<li><p><a href="http://kbroman.github.io/Tools4RR/">Course on Reproducible Research by K. Broman</a></p></li>
+<li><p><a href="https://www.coursera.org/course/repdata">Reproducible Research in Coursera</a></p></li>
+<li><p><a href="http://nicercode.github.io/guides/reports/">Nice R code</a></p></li>
+<li><p><a href="http://christophergandrud.github.io/RepResR-RStudio/">Reproducible Research with R and RStudio</a></p></li>
+<li><p><a href="https://github.com/SimonGoring/GoringetalPollenRichness">Example of full paper written in Rmd</a></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>More links (software/R packages)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p><a href="http://cran.r-project.org/web/views/ReproducibleResearch.html">CRAN Task View on Reproducible Research</a></p></li>
+<li><p><a href="http://yihui.name/knitr/">knitr</a></p></li>
+<li><p><a href="http://johnmacfarlane.net/pandoc/">pandoc</a></p></li>
+<li><p><a href="http://rapporter.github.io/pander/">pander</a></p></li>
+<li><p><a href="http://rapport-package.info/">rapport</a></p></li>
+<li><p><a href="http://cran.r-project.org/web/packages/reports/index.html">reports</a></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Next step: version control of Rmarkdown documents</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<p><img src="assets/img/git.JPG" alt=""></p>
+
+<p><img src="assets/img/github.JPG" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Collaborative writing and version control without learning Git</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p><a href="https://draftin.com/">Draftin</a></p></li>
+<li><p><a href="http://www.scigit.com/">SciGit</a></p></li>
+<li><p><a href="https://www.authorea.com/">Authorea</a></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>To read more</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/plos.PNG" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Ten simple rules for Reproducible Research</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol class = "build incremental">
+<li><p>For every result, keep track of how it was produced</p></li>
+<li><p>Avoid manual data manipulation steps</p></li>
+<li><p>Archive the exact versions of all external programs used</p></li>
+<li><p>Version control all custom scripts</p></li>
+<li><p>Record all intermediate results, when possible in standardized formats</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Ten simple rules for Reproducible Research</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol class = "build incremental">
+<li><p>For analyses that include randomness, note underlying random seeds</p></li>
+<li><p>Always store raw data behind plots</p></li>
+<li><p>Generate hierarchical analysis output, allowing layers of increasing detail to be inspected</p></li>
+<li><p>Connect textual statements to underlying results</p></li>
+<li><p>Provide public access to scripts, runs, and results</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Find these slides at</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p><a href="https://github.com/Pakillo">GitHub</a></p></li>
+<li><p><a href="">Figshare</a></p></li>
+<li><p><a href="https://github.com/Pakillo">Code</a></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>END</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='1. Prepare data (Excel)'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='2. Do some analysis (R)'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='3. Write a report/paper (Word)'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='This workflow is broken'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Problems brought by the broken workflow'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Rmarkdown allows us to fix the disconnect'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Let&#39;s make our sunshine-happiness research reproducible'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='With PANDOC, conversion to PDF or Word is straightforward'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='If spotting error in the data, or using different dataset...'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='So... main advantages'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Convert your R scripts to Rmd, html, word, pdf...'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Some useful links:'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='More links (software/R packages)'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Next step: version control of Rmarkdown documents'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Collaborative writing and version control without learning Git'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='To read more'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Ten simple rules for Reproducible Research'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Ten simple rules for Reproducible Research'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Find these slides at'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='END'>
+         21
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
