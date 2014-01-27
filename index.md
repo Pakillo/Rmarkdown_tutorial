@@ -29,7 +29,7 @@ e.g. Does sunshine influence happiness?
 <br>
 <br>
 
-![](assets/img/idea.PNG)
+![](assets/img/idea.png)
 
 
 
@@ -37,13 +37,13 @@ e.g. Does sunshine influence happiness?
 
 ## 1. Prepare data (Excel)
 
-<center>![](assets/img/excel.PNG)</center>
+<center>![](assets/img/excel.png)</center>
 
 ---
 
 ## 2. Do some analysis (R)
 
-![](assets/img/rstudio.PNG)
+![](assets/img/rstudio.png)
 
 
 ---
@@ -51,7 +51,7 @@ e.g. Does sunshine influence happiness?
 ## 3. Write a report/paper (Word)
 
 
-![](assets/img/word.PNG)
+![](assets/img/word.png)
 
 All results (figures, tables) **manually** imported to Word
 
@@ -78,7 +78,7 @@ All results (figures, tables) **manually** imported to Word
 
 *** =left
 
-![](assets/img/fig.PNG)
+![](assets/img/fig.png)
 
 
 *** =right
@@ -123,7 +123,7 @@ in a single dynamic document
 - Before starting any project read this: 
 [Designing projects at Nice R Code](http://nicercode.github.io/blog/2013-04-05-projects/)
 
-![](assets/img/projects.PNG)
+![](assets/img/projects.png)
 
 <br>
 - Now see myproject.Rmd
@@ -136,11 +136,11 @@ in a single dynamic document
 
 *** =left
 
-![](assets/img/word2.PNG)
+![](assets/img/word2.png)
 
 
 *** =right
-![](assets/img/pdf.PNG)
+![](assets/img/pdf.png)
 
 ---
 
@@ -155,7 +155,7 @@ make changes in Rmarkdown and report will update automatically
 
 *** =left
 
-![](assets/img/report.PNG)
+![](assets/img/report.png)
 
 
 *** =right
@@ -175,7 +175,7 @@ make changes in Rmarkdown and report will update automatically
 
 - with [one click in RStudio](http://www.rstudio.com/ide/docs/authoring/markdown_notebooks)
 
-![](assets/img/notebook.PNG)
+![](assets/img/notebook.png)
 
 
 - using knitr::spin or knitr::stitch [e.g. stitch("Rscript2convert.R")]
@@ -244,7 +244,7 @@ make changes in Rmarkdown and report will update automatically
 
 ## To read more
 
-![](assets/img/plos.PNG)
+![](assets/img/plos.png)
 
 ---
 
