@@ -1,12 +1,12 @@
-Reproducible Research with Rmarkdown: data management, analysis, and reporting all-in-one
-=========================================================================================
+Reproducible Research with Rmarkdown 
+====================================
 
-Rmarkdown_tutorial
-------------------
+Data management, analysis and reporting all-in-one
+--------------------------------------------------
 
 Workshop materials for a basic introduction to Rmarkdown. Check slides at http://pakillo.github.io/Rmarkdown_tutorial.
 
 
 Francisco Rodriguez-Sanchez
-tinyurl.com/frod-san
+http://tinyurl.com/frod-san
 
