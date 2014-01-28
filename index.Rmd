@@ -126,7 +126,7 @@ in a single dynamic document
 ![](assets/img/projects.png)
 
 <br>
-- Now see myproject.Rmd
+- Now see [myproject.Rmd](https://github.com/Pakillo/Rmarkdown_tutorial/blob/gh-pages/myproject.Rmd)
 
 
 --- &twocol
