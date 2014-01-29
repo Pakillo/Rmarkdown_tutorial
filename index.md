@@ -239,6 +239,8 @@ make changes in Rmarkdown and report will update automatically
 
 - [Authorea](https://www.authorea.com/)
 
+- [Editorially](https://editorially.com/)
+
 
 ---
 
